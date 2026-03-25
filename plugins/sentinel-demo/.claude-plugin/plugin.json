@@ -1,11 +1,5 @@
 {
   "name": "sentinel-demo",
   "description": "Plugin demo para crear una carpeta y un componente Angular base",
-  "version": "1.0.0",
-  "skills": [
-    {
-      "name": "create-ng",
-      "path": "skills/create-ng/SKILL.md"
-    }
-  ]
+  "version": "1.0.0"
 }
