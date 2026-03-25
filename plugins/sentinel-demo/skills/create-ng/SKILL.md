@@ -2,7 +2,6 @@
 name: create-ng
 description: Crea una carpeta con el nombre indicado y dentro genera un componente Angular base
 argument-hint: ['nombre-del-componente']
-disable-model-invocation: true
 ---
 
 Tu tarea es crear un componente Angular básico usando como nombre `$ARGUMENTS`.
