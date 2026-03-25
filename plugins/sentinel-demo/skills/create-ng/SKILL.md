@@ -14,7 +14,7 @@ Sigue estas reglas:
 3. Convierte el nombre a kebab-case si hace falta.
 4. Crea una carpeta con ese nombre en el directorio actual.
 5. Dentro crea estos archivos:
-   - `<nombre>.component.ts`
+   - `<nombre>.component-test.ts`
    - `<nombre>.component.html`
    - `<nombre>.component.scss`
 
