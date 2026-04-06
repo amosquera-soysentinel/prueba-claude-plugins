@@ -69,7 +69,17 @@ No simplifiques.
 No refactorices.
 No cambies convenciones existentes.
 
-## 3. Auditoría condicional
+## 3. Crea los archivos con saltos de línea CRLF
+Todos los archivos nuevos o modificados deben guardarse usando finales de línea `CRLF`.
+
+Reglas:
+- respeta `CRLF` en el archivo final generado
+- no mezcles `LF` y `CRLF`
+- si el proyecto ya usa `CRLF`, mantén ese formato
+- si el archivo de referencia del módulo usa `CRLF`, replica exactamente ese formato
+- la salida final debe quedar lista para guardarse con `CRLF`
+
+## 4. Auditoría condicional
 ### Si `HAS_AUDIT = true`
 Incluye auditoría solo si el proyecto realmente usa ese patrón.
 
@@ -95,7 +105,7 @@ No incluyas nada de auditoría:
 - sin `registerAudit`
 - sin código muerto
 
-## 4. Usa solo dependencias necesarias
+## 5. Usa solo dependencias necesarias
 Incluye únicamente dependencias realmente usadas.
 
 No dejes:
@@ -104,7 +114,7 @@ No dejes:
 - parámetros no usados
 - métodos no usados
 
-## 5. No inventes nombres
+## 6. No inventes nombres
 Valida contra el proyecto real antes de asumir nombres de:
 
 - interfaces
@@ -117,7 +127,7 @@ Valida contra el proyecto real antes de asumir nombres de:
 
 Si algo no existe o no puede inferirse con seguridad, indícalo brevemente.
 
-## 6. Salida mínima
+## 7. Salida mínima
 Responde solo con:
 
 1. ruta objetivo
