@@ -96,6 +96,15 @@ Pregunta:
 - si la vista tendrá solo tabla, filtros, modal o formulario
 - si debe replicar exactamente el layout visible de la referencia
 
+### 8. Integración en navegación
+Pregunta:
+- en qué sección del menú principal debe aparecer la nueva opción
+- texto exacto que debe mostrarse en el menú
+- ícono a usar en el menú si aplica
+- si debe quedar visible por defecto o condicionado por permisos/roles
+- si debe agregarse como opción hija de un menú existente o como opción principal
+- si requiere orden específico dentro del menú
+
 No avances hasta tener esta información mínima.
 
 ---
@@ -116,6 +125,9 @@ Cuando el usuario entregue el módulo base:
    - manejo de loading/error/empty
    - organización de estilos
    - componentes reutilizables
+   - patrón de rutas
+   - patrón de registro en menú o navegación
+   - validación por permisos/roles, si existe
 3. reutiliza lo existente antes de crear cosas nuevas
 4. replica exactamente el patrón detectado
 
@@ -190,6 +202,42 @@ Crea solo lo necesario, según el patrón del módulo base. Puede incluir:
 
 ---
 
+## Integración obligatoria en navegación
+Además de crear la vista, debes dejarla integrada al sistema para que aparezca en el menú principal y pueda ser seleccionada por el usuario final.
+
+Para hacerlo debes:
+
+1. identificar cómo registra el proyecto las opciones del menú principal
+2. identificar dónde se definen rutas, labels, iconos, permisos y jerarquía del menú
+3. agregar la nueva opción siguiendo exactamente el patrón existente
+4. enlazar la opción del menú con la ruta real de la nueva pantalla
+5. respetar el orden y la jerarquía del menú existente
+6. aplicar validación de permisos/roles si el proyecto ya la maneja
+7. evitar duplicar configuraciones de navegación
+8. verificar que la opción aparezca visualmente y sea seleccionable
+
+Si el proyecto maneja:
+- menú estático, sigue menú estático
+- menú dinámico desde configuración, sigue menú dinámico
+- guards o permisos, intégralos
+- traducciones para labels, agrégalas siguiendo el patrón existente
+
+No inventes una nueva forma de registrar menús.
+
+---
+
+## Paso final obligatorio
+Como último paso de implementación:
+
+- agrega la nueva opción al menú principal de la aplicación
+- deja configurada su ruta
+- deja configurado su texto visible
+- deja configurado su icono si aplica
+- deja configurados permisos o visibilidad si existen en el patrón del proyecto
+- verifica que quede accesible y seleccionable desde la navegación principal
+
+---
+
 ## Formato de salida
 Responde en este orden:
 
@@ -205,6 +253,7 @@ Resume brevemente:
 - columnas
 - filtros
 - acciones
+- ubicación en menú
 
 ### Fase 3. Análisis del módulo base
 Describe el patrón detectado y cómo lo replicarás.
@@ -222,9 +271,19 @@ Verifica:
 - que la vista respeta la referencia visual
 - que el servicio consume correctamente
 - que los campos corresponden al backend
+- que la navegación quedó integrada al menú principal
+- que la opción aparece seleccionable
 - que el código cumple estándares y Angular 21
 
 ---
+
+### Fase final opcional
+¿Deseas agregar un panel lateral para crear/editar/ver detalle de esta vista?
+
+Si la respuesta es sí:
+- indica que existe una skill independiente llamada `create-panel`
+- resume el contexto técnico encontrado para facilitar su uso posterior
+- no asumas que la otra skill se ejecutará automáticamente
 
 ## Checklist final obligatorio
 Antes de terminar valida:
@@ -235,6 +294,8 @@ Antes de terminar valida:
 4. ¿respetaste la guía visual y la imagen?
 5. ¿los campos y columnas corresponden al backend?
 6. ¿la vista quedó lista para consumir servicios?
-7. ¿evitaste cambios fuera de alcance?
+7. ¿la nueva opción fue agregada al menú principal?
+8. ¿la opción quedó navegable y seleccionable?
+9. ¿evitaste cambios fuera de alcance?
 
 Si algo no está claro, pregunta antes de implementar.
