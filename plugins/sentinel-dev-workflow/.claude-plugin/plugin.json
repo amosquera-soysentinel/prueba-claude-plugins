@@ -1,0 +1,5 @@
+{
+  "name": "sentinel-dev-workflow",
+  "description": "Plugin que ayuda a estandarizar y automatizar tareas de desarrollo como documentación JSDoc, code review y commits, siguiendo las convenciones y buenas prácticas del equipo.",
+  "version": "0.1.0"
+}
